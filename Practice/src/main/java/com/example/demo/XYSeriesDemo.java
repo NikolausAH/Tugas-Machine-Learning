@@ -9,16 +9,12 @@ import org.jfree.data.xy.XYSeriesCollection;
 import org.jfree.ui.ApplicationFrame;
 
 public class XYSeriesDemo extends ApplicationFrame {
-    final XYSeries series = new XYSeries("Random Data");
+    final XYSeries series = new XYSeries("Grafik antara jumlah error dan epoch dengan alpha 0,8");
+    final XYSeries series2 = new XYSeries("Grafik dummy");
     public XYSeriesDemo(String title) {
         super(title);
-//        series.add(1.0, 500.2);
-//        series.add(1.0, 505.2);
-//        series.add(4.0, 100.0);
-//        series.add(12.5, 734.4);
-//        series.add(17.3, 453.2);
-//        series.add(21.2, 500.2);
         final XYSeriesCollection data = new XYSeriesCollection(series);
+        final XYSeriesCollection data2 = new XYSeriesCollection(series2);
         final JFreeChart chart = ChartFactory.createXYLineChart(
                 "XY Series Demo",
                 "X",
@@ -29,12 +25,12 @@ public class XYSeriesDemo extends ApplicationFrame {
                 true,
                 false
         );
-
         final ChartPanel chartPanel = new ChartPanel(chart);
         chartPanel.setPreferredSize(new java.awt.Dimension(500, 270));
         setContentPane(chartPanel);
     }
     public void set(Double x,Double y){
     series.add(x,y);
+
     }
     }

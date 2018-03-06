@@ -3,14 +3,11 @@ package com.example.demo;
 import org.jfree.ui.RefineryUtilities;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.Arrays;
-
 @SpringBootApplication
-public class PracticeApplication {
+public class StochasticGradientDescent {
 
     public static void main(String[] args) {
-        Double Alpha = 0.8; //ganti alpha disini
-
+        Double Alpha = 0.1;
         Error epoch = new Error();
         Dataset dataset = new Dataset();
         Integer i = 0;
@@ -53,6 +50,7 @@ public class PracticeApplication {
             j=0;
             i = i + 1;
         }
+
         final XYSeriesDemo demo = new XYSeriesDemo("XY Series Demo");
         while (z<=60){
             demo.set(z+0.000000001,epoch.error[z]);
